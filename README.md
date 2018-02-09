@@ -4,8 +4,18 @@ This repository contains elliptic curve parameters for use with pymiracl.
 
 ## curve parameters
 
-`mXXX.ecs` and `mXXX_multi.ecs` files work with pymiracl and pymiraclvec,
-respectively. See the pymiracl documentation for more information.
+`mXXX_multi.ecs` define curve parameters for the named curves. Each one also
+includes 16384 randomly-generated (via hashing) curve points, which are used
+as public parameters for Pedersen commitments.
+
+If you need much larger public parameters, you can generate your own (see
+below), or if you want to use the M191 elliptic curve you can download one
+of our pre-computed "big" parameter sets. The file `m191big_multi_url` has
+links to three such files; download them to this directory and unzip them
+if necessary. These files are named `m191big_multi.ecs`, so if you are using
+these with [fennel](https://github.com/hyraxZK/fennel) or
+[bccgp](https://github.com/hyraxZK/bccgp), you will need to specify `-C m191big`
+on the command line.
 
 ## generator scripts
 
